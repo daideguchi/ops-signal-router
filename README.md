@@ -64,6 +64,12 @@ Architecture diagram:
 submission/architecture-diagram.png
 ```
 
+YouTube demo:
+
+```text
+https://youtu.be/XtZnvCphRXg
+```
+
 ## Claim Boundary
 
 - The current build includes the routing core, judge demo, and Slack developer sandbox app.

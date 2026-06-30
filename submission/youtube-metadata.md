@@ -41,3 +41,9 @@ Thumbnail:
 ```text
 submission/youtube-thumbnail.png
 ```
+
+Uploaded URL:
+
+```text
+https://youtu.be/XtZnvCphRXg
+```

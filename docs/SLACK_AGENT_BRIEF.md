@@ -71,11 +71,10 @@ It also extracts deadline, source, accountable party, evidence link, and next Sl
 - Slack Developer Program sandbox exists and the app is installed.
 - Required reviewer accounts have been invited to the sandbox.
 - Live Slack action-card proof has been captured.
+- YouTube demo is uploaded on PETOPIA AI: `https://youtu.be/XtZnvCphRXg`.
 - No private user data or secrets are in the public repo.
 
 ## Remaining Submission Work
 
-1. Record a roughly 3-minute public demo video.
-2. Upload the demo video to YouTube/Vimeo.
-3. Fill Devpost details, additional info, gallery, sandbox URL, repo, and architecture diagram.
-4. Final Submit only after the project page reads back coherently.
+1. Fill Devpost details, additional info, gallery, sandbox URL, repo, YouTube demo, and architecture diagram.
+2. Final Submit only after the project page reads back coherently.
