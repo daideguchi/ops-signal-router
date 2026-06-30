@@ -43,6 +43,12 @@ npm run verify
 
 Open `site/index.html` for the judge-facing local demo.
 
+Public demo target after GitHub Pages is enabled:
+
+```text
+https://daideguchi.github.io/ops-signal-router/site/
+```
+
 ## Claim Boundary
 
 - The current build is the routing core and judge demo.

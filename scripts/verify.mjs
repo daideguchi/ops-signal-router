@@ -2,9 +2,15 @@ import { readFile } from "node:fs/promises";
 import { routeBatch, routeOpsSignal } from "../src/router.mjs";
 
 const events = JSON.parse(await readFile(new URL("../data/sample_events.json", import.meta.url), "utf8"));
+const readme = await readFile(new URL("../README.md", import.meta.url), "utf8");
+const indexHtml = await readFile(new URL("../index.html", import.meta.url), "utf8");
+const siteHtml = await readFile(new URL("../site/index.html", import.meta.url), "utf8");
 const routed = routeBatch(events);
 
 assert(events.length >= 5, "expected at least five sample events");
+assert(readme.includes("https://daideguchi.github.io/ops-signal-router/site/"), "README must name the public demo target");
+assert(indexHtml.includes("./site/"), "root index must redirect to the site demo");
+assert(siteHtml.includes("Ops Signal Router"), "site page must render the product name");
 assert(routed[0].route.tier === "ACT_NOW" || routed[0].route.tier === "STOPLINE", "top event must require action or stopline handling");
 
 const prize = events.find((event) => event.id === "evt-winner-paperwork");
