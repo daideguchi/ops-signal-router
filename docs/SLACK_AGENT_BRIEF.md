@@ -62,20 +62,20 @@ The agent classifies incoming messages into operational states:
 
 It also extracts deadline, source, accountable party, evidence link, and next Slack action.
 
-## MVP Acceptance
+## Current Acceptance
 
 - Deterministic local routing core passes tests.
 - Browser demo shows realistic operations queue and Slack action-card preview.
 - Public README explains user, problem, AI use, Slack fit, and claim boundary.
-- Architecture diagram is present.
+- Architecture diagram is present as `submission/architecture-diagram.png`.
+- Slack Developer Program sandbox exists and the app is installed.
+- Required reviewer accounts have been invited to the sandbox.
+- Live Slack action-card proof has been captured.
 - No private user data or secrets are in the public repo.
 
-## Next Integration
+## Remaining Submission Work
 
-1. Join the Slack hackathon on Devpost.
-2. Join the Slack Developer Program.
-3. Claim or create the Slack developer sandbox.
-4. Create Slack agent shell or app integration.
-5. Wire this routing core as an MCP-backed tool or Slack app action.
-6. Record a 3-minute demo.
-7. Submit on Devpost only after sandbox URL, GitHub, video, architecture, and public demo are coherent.
+1. Record a roughly 3-minute public demo video.
+2. Upload the demo video to YouTube/Vimeo.
+3. Fill Devpost details, additional info, gallery, sandbox URL, repo, and architecture diagram.
+4. Final Submit only after the project page reads back coherently.

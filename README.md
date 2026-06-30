@@ -26,11 +26,12 @@ It then renders a Slack Block Kit style action card with an audit reason so the 
 
 ## Slack Fit
 
-The public build targets the New Slack Agent track and is designed to plug into Slack through at least one of the challenge technologies:
+The build targets the New Slack Agent track and uses Slack Agent Builder surfaces inside a developer sandbox:
 
-- MCP server integration for the routing tool
+- Slack `assistant_view` entrypoint
+- Slack Bolt event handling for mentions, DMs, and assistant threads
+- MCP-enabled agent path when a Slack user token is available
 - Slack-native action cards
-- optional Real-Time Search API integration after sandbox setup
 
 The product does not claim Slack Marketplace submission yet. The Organizations track is intentionally deferred because it requires Marketplace submission and multiple active workspaces.
 
@@ -49,9 +50,23 @@ Public demo target after GitHub Pages is enabled:
 https://daideguchi.github.io/ops-signal-router/site/
 ```
 
+Slack app package:
+
+```bash
+cd agent
+npm test
+npm run check
+```
+
+Architecture diagram:
+
+```text
+submission/architecture-diagram.png
+```
+
 ## Claim Boundary
 
-- The current build is the routing core and judge demo.
-- Real Slack developer sandbox installation is the next integration step.
+- The current build includes the routing core, judge demo, and Slack developer sandbox app.
+- Reviewer access is handled through sandbox invitations, not public workspace access.
 - No private Gmail or Slack contents are included; sample events are synthetic but based on realistic operations workflows.
-- No paid Slack resources are required for this local build.
+- No paid Slack resources are required for this build.
