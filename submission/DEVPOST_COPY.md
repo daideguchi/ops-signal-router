@@ -30,6 +30,18 @@ https://github.com/daideguchi/ops-signal-router
 https://daideguchi.github.io/ops-signal-router/site/
 ```
 
+## Devpost Submission
+
+```text
+https://devpost.com/software/ops-signal-router
+```
+
+Status readback:
+
+```text
+SUBMITTED / 5/5 steps done
+```
+
 ## Slack Developer Sandbox URL
 
 ```text

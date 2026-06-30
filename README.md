@@ -50,6 +50,12 @@ Public demo target after GitHub Pages is enabled:
 https://daideguchi.github.io/ops-signal-router/site/
 ```
 
+Devpost submission:
+
+```text
+https://devpost.com/software/ops-signal-router
+```
+
 Slack app package:
 
 ```bash
