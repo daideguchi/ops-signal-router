@@ -39,6 +39,27 @@ const STOPLINE_PATTERNS = [
   /terms/i
 ];
 
+/**
+ * @typedef {Object} OpsSignalEvent
+ * @property {string} [id]
+ * @property {string} [source]
+ * @property {string} [sender]
+ * @property {string} [subject]
+ * @property {string} [body]
+ */
+
+/**
+ * @typedef {Object} OpsRoute
+ * @property {string} tier
+ * @property {number} score
+ * @property {string} deadline
+ * @property {string} nextAction
+ * @property {string[]} reasons
+ */
+
+/**
+ * @param {OpsSignalEvent} event
+ */
 export function routeOpsSignal(event) {
   const text = `${event.source || ""} ${event.sender || ""} ${event.subject || ""} ${event.body || ""}`;
   const reasons = [];
@@ -92,6 +113,9 @@ export function routeOpsSignal(event) {
   };
 }
 
+/**
+ * @param {OpsSignalEvent[]} events
+ */
 export function routeBatch(events) {
   return events.map((event) => ({
     event,
@@ -99,6 +123,9 @@ export function routeBatch(events) {
   })).sort((a, b) => b.route.score - a.route.score);
 }
 
+/**
+ * @param {{ score: number, hasStopline: boolean, text: string }} input
+ */
 function classifyTier({ score, hasStopline, text }) {
   if (hasStopline) return "STOPLINE";
   if (/official evaluation returned|feasible solution found|p1-p6 feasible/i.test(text)) return "ACT_NOW";
@@ -110,6 +137,10 @@ function classifyTier({ score, hasStopline, text }) {
   return "HANDLED";
 }
 
+/**
+ * @param {string} tier
+ * @param {string} text
+ */
 function selectNextAction(tier, text) {
   if (tier === "STOPLINE") return "Escalate with context and do not send external replies automatically.";
   if (/official evaluation returned|feasible solution found|p1-p6 feasible/i.test(text)) return "Record the official result, preserve objectives and hashes, then decide whether another safe improvement exists.";
@@ -120,6 +151,9 @@ function selectNextAction(tier, text) {
   return "Archive as handled after evidence readback.";
 }
 
+/**
+ * @param {string} text
+ */
 function extractDeadline(text) {
   const patterns = [
     /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2}(?:,\s+\d{4})?(?:\s+@\s+[\d:apm\s]+[A-Z]{2,3})?/i,
@@ -133,6 +167,10 @@ function extractDeadline(text) {
   return "";
 }
 
+/**
+ * @param {OpsSignalEvent} event
+ * @param {OpsRoute} route
+ */
 function toSlackCard(event, route) {
   const headline = `[${route.tier}] ${event.subject}`;
   const reasonText = route.reasons.length ? route.reasons.slice(0, 4).join(" | ") : "no escalation signal";
