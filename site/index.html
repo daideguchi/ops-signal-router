@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ops Signal Router</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="queue-panel" aria-label="Signal queue">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">Slack Agent Builder Candidate</p>
+            <h1>Ops Signal Router</h1>
+          </div>
+          <div class="summary-grid" aria-label="Routing summary">
+            <div><span id="count-act">0</span><small>Act now</small></div>
+            <div><span id="count-watch">0</span><small>Watch</small></div>
+            <div><span id="count-stop">0</span><small>Stopline</small></div>
+          </div>
+        </div>
+
+        <div class="controls" role="tablist" aria-label="Queue filter">
+          <button class="filter-button is-active" data-filter="ALL" type="button">All</button>
+          <button class="filter-button" data-filter="ACT_NOW" type="button">Act now</button>
+          <button class="filter-button" data-filter="WAITING" type="button">Waiting</button>
+          <button class="filter-button" data-filter="WATCH" type="button">Watch</button>
+          <button class="filter-button" data-filter="STOPLINE" type="button">Stopline</button>
+        </div>
+
+        <div id="signal-list" class="signal-list"></div>
+      </section>
+
+      <aside class="detail-panel" aria-label="Slack action preview">
+        <div class="detail-header">
+          <p class="eyebrow">Slack action card</p>
+          <h2 id="detail-title">Select a signal</h2>
+        </div>
+        <div class="slack-card">
+          <div id="detail-tier" class="tier">WAITING</div>
+          <p id="detail-action" class="action-text">The agent will show the next action here.</p>
+          <dl class="detail-grid">
+            <div><dt>Source</dt><dd id="detail-source">-</dd></div>
+            <div><dt>Sender</dt><dd id="detail-sender">-</dd></div>
+            <div><dt>Score</dt><dd id="detail-score">-</dd></div>
+            <div><dt>Deadline</dt><dd id="detail-deadline">-</dd></div>
+          </dl>
+          <pre id="detail-audit" class="audit-log"></pre>
+        </div>
+      </aside>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

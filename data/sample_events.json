@@ -1,0 +1,47 @@
+[
+  {
+    "id": "evt-ogc-eval",
+    "source": "Gmail",
+    "sender": "submission@optichallenge.com",
+    "subject": "OGC 2026 Submission 2026-06-29 23:48:39",
+    "body": "Official evaluation returned. P1-P6 feasible. Next acceptable submission time is 2026-06-30 11:48 UTC. Keep the objectives and package hash in evidence.",
+    "receivedAt": "2026-06-30T09:14:00+09:00",
+    "links": ["https://mail.google.com/"]
+  },
+  {
+    "id": "evt-devpost-message",
+    "source": "Devpost",
+    "sender": "organizer@example.com",
+    "subject": "New message for your submission",
+    "body": "Please add the working demo video and environment URL before the deadline. Judges cannot verify the submission without it.",
+    "receivedAt": "2026-06-30T10:05:00+09:00",
+    "links": ["https://devpost.com/software/example"]
+  },
+  {
+    "id": "evt-newsletter",
+    "source": "Devpost",
+    "sender": "newsletter@devpost.com",
+    "subject": "New hackathons in AI and automation",
+    "body": "Slack Agent Builder Challenge has $42,000 in prizes and a July 13 deadline. Backblaze and Arm challenges are also open.",
+    "receivedAt": "2026-06-30T08:55:00+09:00",
+    "links": ["https://slackhack.devpost.com/"]
+  },
+  {
+    "id": "evt-support-misroute",
+    "source": "Support",
+    "sender": "cloud-support@example.com",
+    "subject": "We need payment records",
+    "body": "The case appears to be about billing payment. Please send invoices. The real issue is account recovery for a disabled login path.",
+    "receivedAt": "2026-06-30T07:30:00+09:00",
+    "links": []
+  },
+  {
+    "id": "evt-winner-paperwork",
+    "source": "Gmail",
+    "sender": "prizes@example.com",
+    "subject": "Action required: prize winner tax form",
+    "body": "Congratulations. Please complete the W-9 or tax paperwork within 10 business days to claim the prize.",
+    "receivedAt": "2026-06-30T12:30:00+09:00",
+    "links": ["https://example.com/prize-claim"]
+  }
+]

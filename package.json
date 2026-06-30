@@ -1,0 +1,12 @@
+{
+  "name": "ops-signal-router",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "demo": "node scripts/run_demo.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
