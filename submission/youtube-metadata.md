@@ -48,5 +48,5 @@ submission/youtube-thumbnail.png
 Uploaded URL:
 
 ```text
-https://youtu.be/XtZnvCphRXg
+https://youtu.be/U4vhNWddyMQ
 ```

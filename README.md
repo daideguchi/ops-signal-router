@@ -73,7 +73,7 @@ submission/architecture-diagram.png
 YouTube demo:
 
 ```text
-https://youtu.be/XtZnvCphRXg
+https://youtu.be/U4vhNWddyMQ
 ```
 
 ## Claim Boundary

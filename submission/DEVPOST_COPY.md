@@ -15,7 +15,7 @@ Slack agent that routes scattered ops messages into auditable action cards befor
 ## Video
 
 ```text
-https://youtu.be/XtZnvCphRXg
+https://youtu.be/U4vhNWddyMQ
 ```
 
 ## Repository
