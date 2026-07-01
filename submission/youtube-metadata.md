@@ -3,7 +3,7 @@
 Title:
 
 ```text
-Ops Signal Router - Slack Agent Builder Demo
+Ops Signal Router - Slack Device Demo
 ```
 
 Description:
@@ -14,6 +14,9 @@ Ops Signal Router is a Slack-native operations triage agent for solo founders an
 It turns deadline-heavy messages from Slack, Devpost, Gmail summaries, support cases, and evaluation receipts into auditable Slack action cards.
 
 Demo proof:
+- The video opens on the real Slack thread/device surface
+- A Slack user mentions the Ops Signal Router app
+- The app replies in the thread with route tier, source, score, deadline, next action, and audit trail
 - Slack developer sandbox app installed
 - Slack assistant surface and Bolt event handling
 - route_ops_signal tool backed by the shared routing core

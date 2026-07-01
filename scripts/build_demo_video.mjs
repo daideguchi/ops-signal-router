@@ -10,35 +10,38 @@ const THUMBNAIL_PNG = path.join(ROOT, "submission", "youtube-thumbnail.png");
 const VIDEO = path.join(OUT, "ops-signal-router-demo.mp4");
 const PUBLIC_DEMO = path.join(ROOT, "evidence", "2026-06-30_ops_signal_router_public_pages.png");
 const ARCHITECTURE = path.join(ROOT, "submission", "architecture-diagram.png");
+const SLACK_THREAD = path.join(ROOT, "submission", "slack-thread-action-card.png");
 
 const slides = [
   {
-    key: "title",
-    title: "Ops Signal Router",
-    kicker: "Slack Agent Builder Challenge - New Slack Agent",
+    key: "slack-device",
+    title: "Slack Device Proof",
+    kicker: "The project functioning inside Slack",
+    image: SLACK_THREAD,
     bullets: [
-      "Turns scattered ops messages into Slack action cards.",
-      "Built for solo founders and small teams under deadline pressure.",
-      "Live sandbox app, public repo, architecture diagram, and reviewer invites are ready."
+      "A Slack user mentions the Ops Signal Router app in #general.",
+      "The app replies in the Slack thread with an action card.",
+      "The card shows route tier, source, score, deadline, next action, and audit trail."
     ],
     narration:
-      "This is Ops Signal Router, a Slack-native agent for solo founders and small teams. It turns scattered operational messages into auditable Slack action cards before deadlines slip. The demo uses synthetic messages, while the sandbox app is installed for reviewer testing."
+      "This updated demo opens on the device the project was built for: Slack. A user mentions the Ops Signal Router app inside a Slack channel, and the app replies in the thread with a Slack action card. This is the core functioning surface, not just a slide explanation."
   },
   {
-    key: "problem",
-    title: "The Problem",
-    kicker: "Important signals arrive everywhere",
+    key: "slack-output",
+    title: "Slack Output",
+    kicker: "Triage result inside the thread",
+    image: SLACK_THREAD,
     bullets: [
-      "Prize paperwork, support replies, Devpost requests, and evaluation receipts all arrive in different places.",
-      "Plain notifications add noise instead of deciding what matters.",
-      "The operator needs a clear next action and evidence trail inside Slack."
+      "The incoming message names a Devpost deadline and missing proof.",
+      "The agent classifies it as WATCH with a deadline of July 13.",
+      "The next action tells the operator to fix submission proof and read back the page."
     ],
     narration:
-      "The core problem is not notification. Important messages arrive through Gmail, Devpost, Slack, support portals, and official evaluation emails. The operator needs to know what must be handled now, what can wait, and what proof should be preserved."
+      "The thread shows the product behavior judges need to see. The input is a deadline-heavy operational signal. The app returns the route tier, source, sender, score, deadline, and next action directly inside Slack, where the operator is already working."
   },
   {
     key: "demo",
-    title: "Judge-Facing Demo",
+    title: "Routing Core",
     kicker: "Synthetic queue, real routing logic",
     image: PUBLIC_DEMO,
     bullets: [
@@ -47,20 +50,7 @@ const slides = [
       "STOPLINE for account, payment, terms, or approval boundaries."
     ],
     narration:
-      "The public demo shows the routing core on safe synthetic examples. It separates act-now items from watch items and stoplines. Each card has a tier, score, deadline, next action, and audit reason trail."
-  },
-  {
-    key: "slack",
-    title: "Slack Agent Surface",
-    kicker: "Installed in the developer sandbox",
-    mockSlack: true,
-    bullets: [
-      "Slack assistant view and Bolt event listeners handle mentions, DMs, and threads.",
-      "The agent posts a Slack-native action card in the thread.",
-      "Reviewer accounts were invited to the sandbox as member access."
-    ],
-    narration:
-      "In Slack, the user mentions the app with a message to classify. The agent replies in the thread with a Slack action card. The live proof captured a Devpost deadline message routed to watch, with a next action to finish demo video and sandbox proof."
+      "The public demo uses safe synthetic examples to show the same routing core at a larger scale. It separates act-now items from watch items and stoplines. Each card has a tier, score, deadline, next action, and audit reason trail."
   },
   {
     key: "ai",
@@ -101,27 +91,15 @@ const slides = [
   },
   {
     key: "proof",
-    title: "Verification",
+    title: "Submission Proof",
     kicker: "Current proof package",
     bullets: [
-      "Public repo commit includes the Slack app, tests, architecture diagram, and README.",
-      "Root verify passes on five sample events.",
-      "Agent tests pass seventeen out of seventeen, type check passes, and dependency audit is clean."
+      "Slack sandbox app was installed and reviewer accounts were invited.",
+      "Public repo includes the Slack app, tests, architecture diagram, and README.",
+      "Root verify passes; agent tests pass 17/17; type check and dependency audit pass."
     ],
     narration:
-      "The proof package is ready for judges. The public repo includes the Slack app, tests, architecture diagram, and README. Root verify passes, the agent test suite passes seventeen out of seventeen, type checking passes, and dependency audit reports zero vulnerabilities."
-  },
-  {
-    key: "close",
-    title: "Why It Matters",
-    kicker: "A practical Slack agent for deadline-heavy builders",
-    bullets: [
-      "It reduces missed deadlines and hidden follow-ups.",
-      "It gives every escalation a reason trail.",
-      "It keeps humans in control at the exact points where automation should stop."
-    ],
-    narration:
-      "Ops Signal Router is practical because it makes operational risk visible in Slack. It reduces missed deadlines, preserves reason trails, and keeps humans in control at the exact points where automation should stop. That is the product: faster triage without unsafe autopilot."
+      "The proof package is ready for judges. The Slack sandbox app was installed, reviewer accounts were invited, and the public repo includes the Slack app, tests, architecture diagram, and README. Root verify passes, the agent test suite passes seventeen out of seventeen, type checking passes, and dependency audit reports zero vulnerabilities."
   }
 ];
 
@@ -187,13 +165,13 @@ async function renderSlide(slide) {
   const media = slide.mockSlack
     ? renderMockSlack(880, 256)
     : image
-      ? `<image href="${image}" x="780" y="216" width="1010" height="568" preserveAspectRatio="xMidYMid meet" clip-path="url(#mediaClip)"/>`
+      ? `<image href="${image}" x="830" y="190" width="950" height="760" preserveAspectRatio="xMidYMid meet" clip-path="url(#mediaClip)"/>`
       : renderActionCards(870, 245);
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
   <defs>
-    <clipPath id="mediaClip"><rect x="780" y="216" width="1010" height="568" rx="20"/></clipPath>
+    <clipPath id="mediaClip"><rect x="830" y="190" width="950" height="760" rx="20"/></clipPath>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#0f172a" flood-opacity="0.18"/></filter>
     <style>
       .bg { fill: #f8fafc; }
@@ -281,8 +259,8 @@ function renderThumbnail() {
   </defs>
   <rect width="1280" height="720" fill="#f8fafc"/>
   <rect x="70" y="64" width="1140" height="592" rx="30" fill="#ffffff" stroke="#dbe4ee" stroke-width="2" filter="url(#shadow)"/>
-  <text class="title" x="112" y="172">Ops Signal Router</text>
-  <text class="sub" x="116" y="226">Slack agent for auditable ops triage</text>
+  <text class="title" x="112" y="172">Slack Device Demo</text>
+  <text class="sub" x="116" y="226">Ops Signal Router functioning inside Slack</text>
   <rect x="118" y="292" width="240" height="72" rx="16" fill="#b91c1c"/>
   <text class="small" x="172" y="338">ACT NOW</text>
   <rect x="394" y="292" width="210" height="72" rx="16" fill="#b45309"/>
